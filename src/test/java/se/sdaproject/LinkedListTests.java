@@ -33,6 +33,23 @@ class LinkedListTests {
         list.add(2);
         list.add(5);
 
-        assertEquals(  list.search(5), 2);
+        assertEquals(  list.search(5), 2, "Index of 5 should be 2" );
+    }
+
+    @Test
+    void searchNonExistingElement() {
+        LinkedList list = new LinkedList();
+        list.add(1);
+        list.add(2);
+        list.add(5);
+
+        assertEquals(  list.search(7), -1);
+    }
+
+    @Test
+    void searchMethodOnEmptyList() {
+        LinkedList list = new LinkedList();
+
+        assertEquals(  list.search(5), -1, "Method should return -1" );
     }
 }
